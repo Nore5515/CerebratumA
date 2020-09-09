@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sounds/death.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/DeathNoise.gd" type="Script" id=2]
+[ext_resource path="res://Images/icon.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.013245, 1 )
+colors = PoolColorArray( 0.704045, 0.754883, 0.486546, 1, 0.961914, 0.304356, 0.304356, 1 )
+
+[node name="DeathNoise" type="AudioStreamPlayer2D" groups=[
+"sound",
+]]
+stream = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="icon" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2( 3.61732, 3.61732 )
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+randomness = 0.3
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 60.0
+color_ramp = SubResource( 1 )
+[connection signal="finished" from="." to="." method="_on_DeathNoise_finished"]

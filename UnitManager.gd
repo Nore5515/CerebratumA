@@ -18,6 +18,7 @@ var left
 var right
 var up
 var down
+var shooting
 
 
 onready var bases = get_tree().get_nodes_in_group("base")
@@ -72,6 +73,9 @@ func _process(delta):
 				controlledUnit.move_and_slide(Vector2(0,-controlledUnit.speed))
 			if down:
 				controlledUnit.move_and_slide(Vector2(0,controlledUnit.speed))
+			if shooting:
+				controlledUnit.shootAt(get_global_mouse_position(), deg2rad(0))
+				shooting = false
 
 	if !controlling:
 		
@@ -139,4 +143,7 @@ func _input(event):
 		
 	if event.is_action_pressed("z"):
 		camera.zoom = originalZoom
+		
+	if event.is_action_pressed("fire"):
+		shooting = true
 		

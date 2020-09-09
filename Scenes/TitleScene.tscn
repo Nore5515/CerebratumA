@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Images/bg.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/TitleScene.gd" type="Script" id=2]
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( -895.961, -173.902 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="bg2" type="Sprite" parent="."]
+position = Vector2( -2805.94, -174.211 )
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="ResetPoint" type="Node2D" parent="."]
+position = Vector2( 1021.01, -174.211 )
+
+[node name="ResetPoint2" type="Node2D" parent="."]
+position = Vector2( -2804.91, -172.06 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 299.763
+margin_top = 9.53674e-07
+margin_right = 395.868
+margin_bottom = 49.7021
+rect_scale = Vector2( 3.82116, 3.82116 )
+text = "CEREBRATUM ANNUI"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="."]
+margin_left = 405.391
+margin_top = 233.984
+margin_right = 481.0
+margin_bottom = 269.0
+rect_scale = Vector2( 2.16985, 2.16985 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TeamPick" type="Button" parent="."]
+visible = false
+margin_left = 630.541
+margin_top = 233.984
+margin_right = 760.0
+margin_bottom = 286.0
+rect_scale = Vector2( 1.25983, 1.25983 )
+text = "TEAM LIMIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FreePick" type="Button" parent="."]
+visible = false
+margin_left = 630.541
+margin_top = 336.584
+margin_right = 724.0
+margin_bottom = 374.0
+rect_scale = Vector2( 1.75172, 1.75172 )
+text = "FREE PICK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Button" parent="."]
+margin_left = 405.391
+margin_top = 336.584
+margin_right = 498.85
+margin_bottom = 374.0
+rect_scale = Vector2( 1.75172, 1.75172 )
+text = "INFO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoDeet" type="Label" parent="."]
+visible = false
+margin_left = 617.174
+margin_top = 324.653
+margin_right = 657.174
+margin_bottom = 338.653
+text = "USE WASD TO MOVE CAMERA
+ZOOM IN AND OUT WITH SCROLL WHEEL
+Z TO RESET ZOOM
+CLICK A UNIT TO CONTROL
+ONCE POSSESSING, LEFT CLICK TO SHOOT
+RIGHT CLICK FOR SPECIAL
+SPACE TO LEAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 405.391
+margin_top = 506.634
+margin_right = 498.85
+margin_bottom = 544.05
+rect_scale = Vector2( 1.75172, 1.75172 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="TeamPick" to="." method="_on_TeamPick_pressed"]
+[connection signal="pressed" from="FreePick" to="." method="_on_FreePick_pressed"]
+[connection signal="pressed" from="Info" to="." method="_on_Info_pressed"]

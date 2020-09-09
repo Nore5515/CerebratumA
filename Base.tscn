@@ -23,4 +23,19 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="HPbar" type="ProgressBar" parent="."]
+margin_left = -97.4227
+margin_top = -108.735
+margin_right = 99.5389
+margin_bottom = -94.7351
+step = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="HealTimer" to="." method="_on_HealTimer_timeout"]

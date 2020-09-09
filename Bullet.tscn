@@ -23,5 +23,10 @@ shape = SubResource( 1 )
 
 [node name="BulletLife" type="Timer" parent="."]
 one_shot = true
+
+[node name="icon2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 148.376, 4.08794 )
+texture = ExtResource( 1 )
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="timeout" from="BulletLife" to="." method="_on_BulletLife_timeout"]
